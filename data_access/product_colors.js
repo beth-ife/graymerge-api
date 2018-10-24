@@ -1,5 +1,5 @@
 'use strict';
-const model = require('../../../models/index');
+const model = require('../models/index');
 const Model = model.product_colors;
 let include = [
     {model: model.products},

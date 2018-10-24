@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
             references: {
                 model: "currencies",
                 key: "id",
-                deferrable: DataTypes.Deferrable.INITIALLY_DEFERRED
+
             }
         },
         categoryId: {
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
             references: {
                 model: "categories",
                 key: "id",
-                deferrable: DataTypes.Deferrable.INITIALLY_DEFERRED
+
             }
         },
     }, {});

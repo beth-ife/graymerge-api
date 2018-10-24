@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             references: {
                 model: "products",
                 key: "id",
-                deferrable: DataTypes.Deferrable.INITIALLY_DEFERRED
+
             }
         },
     }, {});
