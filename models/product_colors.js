@@ -31,11 +31,11 @@ module.exports = (sequelize, DataTypes) => {
         },
     }, {});
     product_colors.associate = function (models) {
-        product_colors.belongsTo(models.products);
+       /* product_colors.belongsTo(models.products);
         models.products.hasMany(product_colors)
 
         product_colors.belongsTo(models.colors);
-        models.colors.hasMany(product_colors)
+        models.colors.hasMany(product_colors)*/
     };
     return product_colors;
 };
