@@ -30,7 +30,10 @@ const VIEW = (query = null) => {
     db_query = Model.findAll({
         where: query,
         attributes: ['id', 'name', 'price'],
-        include: [{model: model.images}, {model: model.currencies}]
+        include: [{model: model.images}, {model: model.currencies}],
+        order: [
+            ['createdAt', 'DESC']
+        ]
     });
     return db_query.then(query_resp => {
 
