@@ -27,7 +27,11 @@ const VIEW = (query = null) => {
     let db_query;
 
 
-    db_query = Model.findAll({where: query, include: [{model: model.images}, {model: model.currencies}]});
+    db_query = Model.findAll({
+        where: query,
+        attributes: ['id', 'name', 'price'],
+        include: [{model: model.images}, {model: model.currencies}]
+    });
     return db_query.then(query_resp => {
 
         if (!query_resp.errors) {
