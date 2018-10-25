@@ -11,6 +11,9 @@ router.use('/images', require('./images'));
 router.use('/upload-image',(req,res,next)=>{
     return res.json(req.body)
 });
+router.get('/',(req,res,next)=>{
+    return res.json({status:true,message:"Please find the docs at http://pollmatrix_docs.surge.sh/"})
+});
 
 
 module.exports = router;
