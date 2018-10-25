@@ -1,7 +1,7 @@
 'use strict';
 const createError = require('http-errors');
 
-const {create, REMOVE, view, viewOne, update,} = require('../data_access/product_colors');
+const {create, REMOVE, view, viewOne, update,} = require('../data_access/products');
 
 
 const CREATE = (req, res, next) => {
@@ -11,8 +11,9 @@ const CREATE = (req, res, next) => {
     }
 
 
-
     let query_data = JSON.parse(JSON.stringify(req.body));
+
+    console.log(query_data)
 
     return create(query_data).then(query_response => {
         if (!query_response.errors) {

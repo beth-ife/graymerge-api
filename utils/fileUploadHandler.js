@@ -14,7 +14,8 @@ module.exports = (uploads) => {
     return new Promise((resolve, reject) => {
         let uploaded_files = [];
 
-        let length = (Object.keys(uploads)).length; //using this to determine when all the files have been uploaded
+
+        let length = typeof(uploads)==='object'? (Object.keys(uploads)).length:0; //using this to determine when all the files have been uploaded
 
         //looping through files and uploading 1 at a time because Cloudinary doesn't do bulk upload
         for (let i in uploads) {

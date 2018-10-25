@@ -1,16 +1,18 @@
 'use strict';
-const model = require('../../../models/index');
+const model = require('../models/index');
 const Model = model.products;
 let include = [
     {model: model.categories},
     {model: model.currencies},
-    {model: model.colors}
+    {model: model.colors},
+    {model: model.images}
 ];
 
 
 const CREATE = (data) => {
 
-    return Model.create(data).then(query_resp => {
+
+    return Model.create(data, {include: [{model: model.images}]}).then(query_resp => {
         if (!query_resp.errors) {
             return {data: query_resp}
 
@@ -25,7 +27,7 @@ const VIEW = (query = null) => {
     let db_query;
 
 
-    db_query = Model.findAll({where: query, include});
+    db_query = Model.findAll({where: query, include: [{model: model.images}, {model: model.currencies}]});
     return db_query.then(query_resp => {
 
         if (!query_resp.errors) {

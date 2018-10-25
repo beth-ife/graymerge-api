@@ -5,6 +5,10 @@
   "scripts": {
     "start": "nodemon ./bin/www"
   },
+  "apidoc": {
+    "title": "Graymerge API",
+    "url": "https://graymerge.herokuapp.com"
+  },
   "dependencies": {
     "cloudinary": "",
     "cookie-parser": "~1.4.3",

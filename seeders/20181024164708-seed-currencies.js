@@ -6,7 +6,7 @@ module.exports = {
             {
                 "id": "ebd4b584-da3a-4e60-ab97-b435fca08931",
                 "name": 'Naira',
-                "symbol": '&#8358;',
+                "symbol": 'NGN',
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }, {
